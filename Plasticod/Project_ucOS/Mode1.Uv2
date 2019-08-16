@@ -177,7 +177,7 @@ Options 1,0,0  // Target 'STM32F103_Mode'
  ADSLDIF ()
  ADSLDDW ()
   OPTDL (SARMCM3.DLL)()(DARMSTM.DLL)(-pSTM32F103VE)(SARMCM3.DLL)()(TARMSTM.DLL)(-pSTM32F103VE)
-  OPTDBG 49150,13,()()()()()()()()()() (STLink\ST-LINKIII-KEIL_SWO.dll)()()()
+  OPTDBG 49150,-1,()()()()()()()()()() (STLink\ST-LINKIII-KEIL_SWO.dll)()()()
  FLASH1 { 217,0,0,0,1,0,0,0,8,16,0,0,0,0,0,0,0,0,0,0 }
  FLASH2 (STLink\ST-LINKIII-KEIL_SWO.dll)
  FLASH3 ("" ())

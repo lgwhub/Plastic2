@@ -65,28 +65,45 @@
 
 //发光管和键盘控制
 
-#define    RCC_LEDCOM1    RCC_AHBPeriph_GPIOB
+#define    RCC_LEDCOM1    RCC_APB2Periph_GPIOB
 #define    PORT_LEDCOM1   GPIOB
 #define    PIN_LEDCOM1    GPIO_Pin_3
 
-#define    RCC_LEDCOM2    RCC_AHBPeriph_GPIOB
+#define    RCC_LEDCOM2    RCC_APB2Periph_GPIOB
 #define    PORT_LEDCOM2   GPIOB
 #define    PIN_LEDCOM2    GPIO_Pin_4
 
-#define    RCC_KIO1    RCC_AHBPeriph_GPIOB
+#define    RCC_KIO1    RCC_APB2Periph_GPIOB
 #define    PORT_KIO1   GPIOB
 #define    PIN_KIO1    GPIO_Pin_5
-#define    RCC_KIO2    RCC_AHBPeriph_GPIOB
+#define    RCC_KIO2    RCC_APB2Periph_GPIOB
 #define    PORT_KIO2   GPIOB
 #define    PIN_KIO2    GPIO_Pin_6
-#define    RCC_KIO3    RCC_AHBPeriph_GPIOB
+#define    RCC_KIO3    RCC_APB2Periph_GPIOB
 #define    PORT_KIO3   GPIOB
 #define    PIN_KIO3    GPIO_Pin_7
 
 //SWCLK  PA14
-#define    RCC_BackLight    RCC_AHB2Periph_GPIOA
-#define    PORT_BackLight   GPIOA
-#define    PIN_BackLight    GPIO_Pin_14
+//#define    RCC_BackLight    RCC_AHB2Periph_GPIOA
+//#define    PORT_BackLight   GPIOA
+//#define    PIN_BackLight    GPIO_Pin_14
+
+// debug
+#define    RCC_BackLight    RCC_APB2Periph_GPIOC
+#define    PORT_BackLight   GPIOC
+#define    PIN_BackLight    GPIO_Pin_7
+
+//蜂鸣器
+#define    RCC_Beep         RCC_APB2Periph_GPIOC
+#define    PORT_Beep        GPIOC
+#define    PIN_Beep         GPIO_Pin_6
+
+//门开关
+#define    RCC_DOOR         RCC_APB2Periph_GPIOA
+#define    PORT_DOOR        GPIOA
+#define    PIN_DOOR         GPIO_Pin_12
+
+#define DOOR_IS_OPEN()	(GPIO_ReadInputDataBit(PORT_DOOR, PIN_DOOR) == Bit_SET)
 
 
 #define    BackLight_0()    GPIO_ResetBits(PORT_BackLight, PIN_BackLight)

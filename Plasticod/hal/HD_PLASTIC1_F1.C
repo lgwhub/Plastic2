@@ -187,6 +187,8 @@ void InitGpio(void)
 	
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);
 
+	RCC_APB2PeriphClockCmd(RCC_Beep, ENABLE);
+	RCC_APB2PeriphClockCmd(RCC_DOOR, ENABLE);
 
   #if SWD_DEBUG_DISABLE
  				GPIO_PinRemapConfig(GPIO_Remap_SWJ_Disable,ENABLE);     //SWD口和jtag口全部都取消  Full SWJ Disabled (JTAG-DP + SW-DP)
@@ -218,6 +220,13 @@ void InitGpio(void)
  GPIO_Init(GPIOA,&GPIO_InitStructure);
  
  
+  //门开关  plastic5
+  #if CONFIG_RPM_DIGTAL  == 0
+ GPIO_InitStructure.GPIO_Pin = PIN_DOOR;
+ GPIO_InitStructure.GPIO_Mode  =  GPIO_Mode_IPU; 
+ GPIO_Init(PORT_DOOR,&GPIO_InitStructure);
+ #endif 
+ 
  //部分输出口
  GPIO_InitStructure.GPIO_Speed =  GPIO_Speed_50MHz;
  GPIO_InitStructure.GPIO_Mode  =  GPIO_Mode_Out_PP;  //GPIO_Mode_IN_FLOATING;	
@@ -235,6 +244,12 @@ void InitGpio(void)
  GPIO_InitStructure.GPIO_Pin = PIN_JSP2;
  GPIO_Init(PORT_JSP2,&GPIO_InitStructure);
  
+   //蜂鸣器  plastic5
+ GPIO_InitStructure.GPIO_Pin = PIN_Beep;
+ GPIO_Init(PORT_Beep,&GPIO_InitStructure);
+ 
+ 
+ 
  //////////////////////
  GPIO_InitStructure.GPIO_Speed =  GPIO_Speed_50MHz;
  GPIO_InitStructure.GPIO_Mode  =  GPIO_Mode_Out_OD;  //GPIO_Mode_IN_FLOATING;	
@@ -245,11 +260,17 @@ void InitGpio(void)
  GPIO_InitStructure.GPIO_Pin = PIN_LEDCOM2;
  GPIO_Init(PORT_LEDCOM2,&GPIO_InitStructure); 
 
- #if   0 * (  SWD_DEBUG_DISABLE  +  0  )
+ #if   0 * (  SWD_DEBUG_DISABLE  +  0  ) 
  //SWCLK  PA14
+ // 背光 plastic5
  GPIO_InitStructure.GPIO_Pin = PIN_BackLight;
  GPIO_Init(PORT_BackLight,&GPIO_InitStructure);
  #endif
+
+
+
+
+ 
  
  //PA4      DAC
 //  GPIO_InitStructure.GPIO_Pin   =  GPIO_Pin_4;
