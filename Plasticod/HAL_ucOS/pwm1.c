@@ -9,22 +9,33 @@
 unsigned int PmwVal_TIM1_ch1;  
 //TIM_SetCompare1(TIM1, PmwVal_TIM1_ch1);
 
+#if CONFIG_RPM_DIGTAL  
 #define SYNC_USE_ETR  1
 //使用ETR清零作为移相同步。。。正常同步信号是下降沿，
 //  TIM_ExtTRGPolarity_NonInverted  ETR上升沿
 //  或许还是使用下降沿吧
+#else
+#define SYNC_USE_ETR  0
+#endif
 
 
 
 ////////////////////////  
-//10ms周期
-// 移相触发应用，正常PERIOD_9990US = 10000  即10ms，考虑到同步信号滞后，防止触发下个半波，所以减小0.5ms左右，可以不能输出小电压了
-//#define PERIOD_9990US  10000
-//#define PERIOD_9990US  9700
-//#define PERIOD_9990US  9000
-#define PERIOD_9990US  8000
-#define PRESCALER_val  ( ( 72 * PERIOD_9990US /  1000  ) - 1 )
+#if CONFIG_RPM_DIGTAL 
+    //10ms周期
+    // 移相触发应用，正常PERIOD_9990US = 10000  即10ms，考虑到同步信号滞后，防止触发下个半波，所以减小0.5ms左右，可以不能输出小电压了
+    //#define PERIOD_9990US  10000
+    //#define PERIOD_9990US  9700
+    //#define PERIOD_9990US  9000
+    #define PERIOD_9990US  8000
+    #define PRESCALER_val  ( ( 72 * PERIOD_9990US /  1000  ) - 1 )
 
+#else
+   // #define PERIOD_9990US  1000/72 = 13us  = 
+    //#define PRESCALER_val  ( ( 72 * PERIOD_9990US /  1000  ) - 1 )
+    //72khz pwm
+    #define PRESCALER_val  (0)
+#endif
 
 
 //////////////////////////////////    

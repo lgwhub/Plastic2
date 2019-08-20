@@ -90,6 +90,23 @@
 #define    PIN_BackLight    GPIO_Pin_14
 
 
+//#define    RCC_BackLight    RCC_AHBPeriph_GPIOC
+//#define    PORT_BackLight   GPIOC
+//#define    PIN_BackLight    GPIO_Pin_7
+
+//·äÃùÆ÷
+//#define    RCC_Beep         RCC_AHBPeriph_GPIOC
+//#define    PORT_Beep        GPIOC
+//#define    PIN_Beep         GPIO_Pin_6
+
+//ÃÅ¿ª¹Ø
+#define    RCC_DOOR         RCC_AHBPeriph_GPIOA
+#define    PORT_DOOR        GPIOA
+#define    PIN_DOOR         GPIO_Pin_12
+
+#define DOOR_IS_OPEN()	(GPIO_ReadInputDataBit(PORT_DOOR, PIN_DOOR) == Bit_SET)
+
+
 #define    BackLight_0()    GPIO_ResetBits(PORT_BackLight, PIN_BackLight)
 #define    BackLight_1()		GPIO_SetBits(PORT_BackLight, PIN_BackLight)
 

@@ -467,7 +467,8 @@ OSTimeDly(OS_TICKS_PER_SEC/10);	    //延时0.1秒
                     #endif
                     }
           else{
-          	
+          	#if CONFIG_RPM_DIGTAL
+          	//数字反馈控制
                  if ( LcdPort.MovingF  ==  1 )
                            {
                             pPidBufMt -> SetPoint = LcdPort.RpmSet * 10 ;       //设定目标
@@ -480,7 +481,9 @@ OSTimeDly(OS_TICKS_PER_SEC/10);	    //延时0.1秒
                   PID_Calc( pPidMt , pPidBufMt , AdcRes.RpmCur );
           
                   LcdPort.RpmOut    =  (unsigned short int)pPidBufMt -> Qx ;     //速度控制值
-              
+        #else
+              LcdPort.RpmOut  =    LcdPort.RpmSet;
+        #endif      
                     }
            
             //电机控制量转化为移相值
@@ -498,7 +501,7 @@ OSTimeDly(OS_TICKS_PER_SEC/10);	    //延时0.1秒
            ////////////////////////////////////////////
            
            TIM_SetCompare1(TIM1,PmwVal_TIM1_ch1);
-	 
+	// #if CONFIG_RPM_DIGTAL
 	
           //OSTimeDly(OS_TICKS_PER_SEC/50);	    //延时  20MS      
            //OSTimeDly(OS_TICKS_PER_SEC/100);	    //延时  10MS
@@ -669,8 +672,8 @@ for(;;)
     //交流测速发电机
     AdcRes.RpmCur            =    After_filter[1] * 990 /4095 ;
     //AdcRes.RpmDisplay   =  = GetAverSS( &AvergeBufGb[ 0 ]  , buf_temp , MaxNumbAvergeGb ) * 99 /4095 ;           //转速， 最大99 ,控制时内部扩大10倍
-    AdcRes.RpmDisplay   =AdcRes.RpmCur /10; 
-    
+    //AdcRes.RpmDisplay   =AdcRes.RpmCur /10; 
+    AdcRes.RpmDisplay   =LcdPort.RpmSet/10;
     //temp16                   = GetAverSS( &AvergeBufGa [ 0 ][ 0 ]  , buf_temp , MaxNumbAvergeGa );              //温度1
     temp16                   = After_filter[2] ;
     AdcRes.temptemprature1   = InterPointCala( temp16 );
