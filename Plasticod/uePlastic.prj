@@ -1,0 +1,125 @@
+[Files - user_ucos]
+0=USER_ucOS\includes.h
+1=USER_ucOS\main.c
+2=USER_ucOS\OS_AppHooks.c
+3=USER_ucOS\os_cfg.h
+4=USER_ucOS\stm32f10x_conf.h
+5=USER_ucOS\stm32f10x_it.c
+6=USER_ucOS\stm32f10x_it.h
+7=USER_ucOS\system_stm32f10x.c
+8=USER_ucOS\uctsk_OSView.c
+9=USER_ucOS\app_cfg.h
+10=USER_ucOS\Sof_ucOS.c
+11=USER_ucOS\user_ucOS.h
+12=USER_ucOS\user.c
+[Files - HAL_UCOS]
+0=HAL_uCOS\uart_UCOS.c
+1=HAL_uCOS\uart_UCOS.h
+2=HAL_ucOS\jump3.c
+3=HAL_ucOS\pwm1.h
+4=HAL_ucOS\pwm1.c
+5=HAL_ucOS\adc.c
+6=HAL_ucOS\adc.h
+7=HAL_ucOS\SPI1.h
+8=HAL_ucOS\SPI1.C
+9=HAL_ucOS\HT1621.c
+10=HAL_ucOS\HT1621.h
+[Files - MyLib]
+0=MyLib\ClearErrSample.c
+1=MyLib\ClearErrSample.H
+2=MyLib\LoopBuf.c
+3=MyLib\LoopBuf.h
+4=MyLib\NOMAL.c
+5=MyLib\NOMAL.H
+6=MyLib\GetAverage.h
+7=MyLib\GetAverage.c
+[Files - user]
+0=USER\FreeRTOSConfig.h
+1=USER\main.c
+2=USER\ParTest.c
+3=USER\stm32f0xx_conf.h
+4=USER\stm32f0xx_it.c
+5=USER\stm32f0xx_it.h
+6=USER\system_stm32f0xx.c
+7=USER\usart.c
+[Open Files]
+Active File Display Mode=3
+Active File Index=7
+Open File Line0=3294
+Open File Line1=2150
+Open File Line2=14199
+Open File Line3=13142
+Open File Line4=14565
+Open File Line5=3923
+Open File Line6=2803
+Open File Line7=0
+Open File Pos0=3764
+Open File Pos1=2545
+Open File Pos2=12948
+Open File Pos3=13422
+Open File Pos4=14771
+Open File Pos5=4087
+Open File Pos6=2953
+Open File Pos7=190
+Open File Window Pos0=0,1,-1,-1,-4,-23,88,88,1135,343
+Open File Window Pos1=0,1,-1,-1,-4,-23,0,0,1003,366
+Open File Window Pos2=0,1,-1,-1,-4,-23,22,22,1025,388
+Open File Window Pos3=0,1,-1,-1,-4,-23,44,44,1047,410
+Open File Window Pos4=0,1,-1,-1,-4,-23,22,22,1069,302
+Open File Window Pos5=0,1,-1,-1,-4,-23,110,110,1113,429
+Open File Window Pos6=0,1,-1,-1,-4,-23,0,0,1047,254
+Open File Window Pos7=2,3,-1,-1,-4,-23,154,154,1157,483
+Open File0=.\app\PID.c
+Open File1=.\app\app1.h
+Open File2=.\USER_ucOS\user.c
+Open File3=.\app\app1.c
+Open File4=.\app\Lcd.c
+Open File5=.\HAL_ucOS\pwm1.c
+Open File6=.\USER_ucOS\Sof_ucOS.c
+Open File7=.\HAL_ucOS\adc.h
+Open File8=
+[Project Information]
+Use Relative Directory=1
+Relative to Project File=1
+Project Start=E30706000300130013001D002200000058
+Include Sub Directories=1
+Project Tagfile=
+Project Wordfile=
+Filter=
+Create Tagfile=0
+Working Time=908747
+[Files - app]
+0=app\app1.c
+1=app\config.h
+2=app\Lcd.c
+3=app\lcd.h
+4=app\app1.h
+5=app\PID.c
+6=app\PID.h
+[Files - hal]
+0=hal\HD_PLASTIC1.h
+1=hal\HD_PLASTIC1_F0.C
+2=hal\HD_PLASTIC1_F1.C
+[Files - HAL_FREE]
+0=HAL_Free\uart_FREE.h
+1=HAL_Free\uart_FREE.c
+[Group]
+0=user
+1=hal
+2=free
+3=MyLib
+4=app
+5=HAL_UCOS
+6=HAL_FREE
+7=user_ucos
+[Folders]
+HAL_FREE=1
+HAL_UCOS=1
+MyLib=1
+app=1
+free=1
+hal=1
+user=1
+user_ucos=1
+[Project ID]
+Signature=UE Proj: v.1

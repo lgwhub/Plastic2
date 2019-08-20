@@ -1,0 +1,112 @@
+#  **********************old**************************************
+#    #  .gitignore  for keil  V2
+#    # ************************* 
+#    *.log
+#    *.plg
+#    *.lst
+#    *.bak
+#    *.prj
+#    *.dep
+#    *.map
+#    *.opt
+#    *.uvgui.*
+#    JLinkLog.txt
+#    *.o
+#    *.d
+#    *.crf
+#    *.tra
+#    *.axf
+#    # *************************
+#    *.hex
+#    *.exe
+#    *.uv2
+#    # *************************
+#    *.lnp
+#    *.sct
+#    *.__i
+#    *.htm
+#    # *************************
+#    .gitignore
+
+#    ******************** old  ******************************
+
+
+#  ************************** new **********************************
+
+#  .gitignore  for keil  V2   2018
+# ************************* 
+*.log
+*.plg
+*.lst
+*.bak
+# *.prj
+*.dep
+*.map
+*.opt
+
+JLinkLog.txt
+
+*.d
+*.crf
+*.tra
+*.axf
+
+
+*.lnp
+*.sct
+*.__i
+*.htm
+
+# Object files 
+
+*.o 
+*.ko 
+*.obj 
+*.elf 
+
+# Precompiled Headers 
+*.gch 
+*.pch 
+ 
+# Libraries 
+
+# *.lib 
+*.a 
+*.la 
+*.lo 
+
+# Shared objects (inc. Windows DLLs) 
+*.dll 
+*.so 
+*.so.* 
+*.dylib 
+
+# Executables 
+
+*.exe 
+*.out 
+*.app 
+*.i*86 
+*.x86_64 
+*.hex 
+
+
+# Debug files 
+
+*.dSYM/ 
+*.su 
+*.bak 
+
+
+*._ia
+
+#  *.uv2
+#  *.uvproj
+#  .gitignore 
+
+
+
+
+
+
+
